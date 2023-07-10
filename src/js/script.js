@@ -14,7 +14,7 @@ const showMenu = () => {
 
 	allNavItems.forEach((item) => {
 		item.addEventListener('click', (e) => {
-			if (!e.classList.contains('close')) {
+			if (!e.classList.includes('close')) {
 				navMobile.classList.remove('active');
 				hamburger.classList.remove('is-open');
 			}
@@ -84,10 +84,12 @@ postData('https://shopapi-npzh.onrender.com/api/v1/typeProducts', {
 	return search;
 });
 
-if (window.location.pathname == '/projects.html') {
+if (window.location.pathname.includes('/projects')) {
+	//console.log(window.location.pathname);
 	postData('https://shopapi-npzh.onrender.com/api/v1/files/forproject', {
 		answer: 42,
 	}).then((data) => {
+		console.log(data);
 		data.forEach(async (element) => {
 			const src = element.src;
 			const name = element.name;
@@ -105,7 +107,9 @@ if (window.location.pathname == '/projects.html') {
 	});
 }
 
-if (window.location.pathname == '/oferta.html') {
+
+
+if (window.location.pathname.includes('/oferta')) {
 	let search = window.location.search;
 	const url = search.substring(5);
 
