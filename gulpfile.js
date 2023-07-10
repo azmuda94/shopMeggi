@@ -67,9 +67,11 @@ function cleanStuff(done) {
 
 function startBrowserSync(done) {
 	browserSync.init({
+		port: 8080,
 		server: {
 			baseDir: './',
-		}
+		},
+	
 	});
 
 	done();
