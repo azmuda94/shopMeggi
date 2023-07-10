@@ -1,0 +1,59 @@
+@media (min-width: 576px) {
+	h1.header-title {
+		left: 15px;
+		width: 270px;
+		font-size: 3rem;
+	}
+
+	h2.section-title {
+		font-size: 2.5rem;
+	}
+
+	h3.contact-title {
+		font-size: 2.4rem;
+	}
+
+	#page {
+		.header {
+			&__img {
+				background-position: 77%;
+			}
+		}
+
+		.about {
+			&__text {
+				line-height: 1.8em;
+			}
+		}
+
+		.projects {
+			position: relative;
+
+			&__images {
+				img {
+					width: 90%;
+					margin: 0 1em;
+				}
+			}
+		}
+
+		.benefits {
+			.square {
+				margin: 1.5em 1.5em;
+				width: 170px;
+				height: 170px;
+				i {
+					font-size: 5rem;
+					text-align: center;
+					color: $title;
+				}
+
+				p {
+					margin-top: 1em;
+					font-size: 1.6rem;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

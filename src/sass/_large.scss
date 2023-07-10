@@ -1,0 +1,260 @@
+@media (min-width: 992px) {
+	h1.header-title {
+		top: 50px;
+		left: 50px;
+		width: 300px;
+		font-size: 4rem;
+	}
+
+	h2.section-title {
+		font-size: 2.5rem;
+	}
+
+	h3.contact-title {
+		padding: 1em;
+		font-size: 2.3rem;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	h4.contact-list-title {
+		margin-bottom: 0.5em;
+		font-size: 2rem;
+		font-weight: 300;
+	}
+	.section {
+		padding: 1em 0;
+		margin: 3em 0;
+	}
+
+	.header {
+		height: 10vh;
+		display: flex;
+		justify-content: space-between;
+
+		&__top {
+			display: flex;
+			position: relative;
+			height: 100%;
+			width: 30%;
+			padding: 0 1em;
+			z-index: 2;
+
+			&-logo {
+				position: relative;
+				padding: 0 1em;
+				// width: 20%;
+				z-index: 2;
+
+				img {
+					height: 100%;
+				}
+			}
+
+			&-hamburger {
+				display: none;
+			}
+		}
+		
+		.nav {
+			position: relative;
+			width: 60%;
+
+			&__mobile {
+				display: none;
+			}
+
+			&__desktop {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				height: 100%;
+				font-size: 2rem;
+				list-style: none;
+
+				&-item {
+					text-align: center;
+					display: block;
+					height: 100%;
+					width: 25%;
+					margin: 0;
+					padding: 0.5em 0;
+					cursor: pointer;
+					
+					&:hover .nav__sub {
+						display: flex;
+						position: relative;
+						top: 0.9em;
+					}
+
+					a {
+						text-decoration: none;
+						color: black;
+					}
+
+					.nav__sub {
+						display: none;
+						flex-direction: column;
+						align-items: center;
+						padding: 0;
+						margin: 0 0.5em;
+						
+						&-item {
+							width: 100%;
+							margin: 0.5em 0;
+							font-size: 1.6rem;
+
+							&:hover {
+								background-color: #d1d1d1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#page {
+		overflow: hidden;
+
+		.img {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 90vh;
+			background-image: url('../img/img-header-desktop.jpg');
+			background-position: bottom;
+			background-size: cover;
+		}
+
+		.about {
+			&__text {
+				font-size: 1.8rem;
+				text-align: center;
+			}
+		}
+
+		.projects {
+			position: relative;
+
+			&__images {
+				img {
+					margin: 2em 1em;
+				}
+			}
+		}
+
+		.benefits {
+			&__squares {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: nowrap;
+				width: 100%;
+
+				.square {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					margin: 1em 2em;
+					padding: 1em;
+					width: 200px;
+					height: 200px;
+					border: 1px solid $title;
+
+					i {
+						font-size: 5rem;
+						text-align: center;
+						color: $title;
+					}
+
+					p {
+						margin-top: 1em;
+						font-size: 2.2rem;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		.contact {
+			background-color: #e7e4e4;
+
+			&__container {
+				display: flex;
+				justify-content: space-around;
+				margin-left: 1em;
+
+				.contact__header {
+					display: flex;
+					flex-direction: column;
+					margin: 1em;
+					width: 25vw;
+					font-size: 1.6rem;
+					transition: 1s all;
+
+					&-title {
+						display: flex;
+						justify-content: space-between;
+						border-bottom: 1px solid black;
+
+						i {
+							display: none;
+						}
+					}
+
+					.content {
+						display: flex;
+						line-height: 25px;
+
+						p.contact-list-address {
+							margin-top: 1em;
+							font-size: 1.6rem;
+							i {
+								font-size: 3rem;
+								text-decoration: none;
+								color: #3b5998;
+							}
+						}
+
+						.contact__header-list {
+							margin-top: 1em;
+							font-size: 1.6rem;
+							list-style: none;
+
+							i {
+								font-size: 2rem;
+							}
+						}
+					}
+				}
+			}
+
+			&__info {
+				margin-top: 2em;
+				text-align: center;
+				font-size: 1.6rem;
+				font-weight: 300;
+
+				a {
+					text-decoration: none;
+					color: #000;
+					font-weight: 500;
+				}
+			}
+
+			.footer {
+				margin-top: 1em;
+				padding: 0.6em;
+				font-size: 1.4rem;
+				background-color: #d6d5d5;
+
+				&__text {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
