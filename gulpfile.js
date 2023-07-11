@@ -96,3 +96,5 @@ const mainFunctions = parallel(
 );
 exports.cleanStuff = cleanStuff;
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
+
+exports.build = series(handleKits,sassCompiler,javascript,convertImages);
