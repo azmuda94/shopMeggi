@@ -7,6 +7,7 @@ const subMenu = document.querySelector('.nav__sub');
 
 const footerYear = document.querySelector('.footer__year');
 
+
 // NAV
 const showMenu = () => {
 	navMobile.classList.toggle('active');
@@ -134,6 +135,7 @@ if (window.location.pathname.includes('/oferta')) {
 			const mainFile = element.mainFile;
 			const name = element.name;
 			const id = element.id;
+			
 
 			const furnitures = document.createElement('div');
 			furnitures.classList = 'furnitures';
@@ -151,7 +153,7 @@ if (window.location.pathname.includes('/oferta')) {
 			furnituresItemPhoto.classList = 'furnitures__item-photo';
 
 			const imgFurniture = document.createElement('img');
-			imgFurniture.src = mainFile;
+			imgFurniture.src = mainFile.src;
 
 			const furnituresItemInfo = document.createElement('div');
 			furnituresItemInfo.classList = 'furnitures__item-info';			
@@ -170,8 +172,6 @@ if (window.location.pathname.includes('/oferta')) {
 			aFurniture.appendChild(furnitureItem);
 
 			furnitures.appendChild(aFurniture);
-
-			console.log(furnitures);
 
 			document.getElementById('wrapper-furniture').appendChild(furnitures);
 		});
