@@ -1,7 +1,7 @@
-$('.center').slick({
+/*$('#photo_rest').slick({
 	centerMode: true,
 	centerPadding: '60px',
-	slidesToShow: 3,
+	slidesToShow: 4,
 	arrows: false,
 	responsive: [
 		{
@@ -31,3 +31,4 @@ $('.center').slick({
 		},
 	],
 });
+*/

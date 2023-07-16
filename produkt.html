@@ -44,16 +44,8 @@
                 <li id="offer-nav" class="nav__mobile-item">
                     <a href="#">Oferta</a>
                     <i class="fa-solid fa-chevron-down"></i>
-                    <div class="nav__sub">
-                        <a class="nav__sub-item"><a href="../../narozniki.html">Narożniki</a>
-                            <a class="nav__sub-item"><a href="sofy.html">Sofy</a>
-                                <a class="nav__sub-item"><a href="fotele.html">Fotele</a>
-                                    <a class="nav__sub-item"><a href="krzesla.html">Krzesła</a>
-                                        <a class="nav__sub-item"><a href="wersalki.html">Wersalki</a>
-                                            <a class="nav__sub-item"><a href="tapczany.html">Tapczany</a>
-                                                <a class="nav__sub-item"><a href="sypialnie.html">Sypialnie</a>
-                                                    <a class="nav__sub-item"><a href="elementy.html">Elementy
-                                                            tapicerowane</a>
+                    <div id="nav__sub" class="nav__sub">
+
                     </div>
                 </li>
                 <li class="nav__mobile-item">
@@ -72,16 +64,8 @@
                 <li id="offer-nav" class="nav__desktop-item">
                     <a href="#">Oferta</a>
                     <i class="fa-solid fa-chevron-down"></i>
-                    <div class="nav__sub">
-                        <a class='nav__sub-item' href="../../narozniki.html">Narożniki</a>
-                        <a class="nav__sub-item" href="sofy.html">Sofy</a>
-                        <a class="nav__sub-item" href="fotele.html">Fotele</a>
-                        <a class="nav__sub-item" href="krzesla.html">Krzesła</a>
-                        <a class="nav__sub-item" href="wersalki.html">Wersalki</a>
-                        <a class="nav__sub-item" href="tapczany.html">Tapczany</a>
-                        <a class="nav__sub-item" href="sypialnie.html">Sypialnie</a>
-                        <a class="nav__sub-item" href="elementy.html">Elementy
-                            tapicerowane</a>
+                    <div id="nav__sub__dsp" class="nav__sub">
+
                     </div>
                 </li>
                 <li class="nav__desktop-item">
@@ -97,19 +81,22 @@
         <div id="wrapper-furniture" class="wrapper">
             <div class="container-furniture">
 
-                <div class="photo">
-                    <img onclick="changeImageFurniture" src="./img/PhotoRoom_000_20230530_121836.jpg"
-                        alt="Zdjęcie narożnika">
+                <div id="photo" class="photo">
+                    
                 </div>
                 <div class="description-furniture">
-                    <h2 class="furniture-title">Narożnik Diana</h2>
+                    <h2 class="furniture-title"></h2>
                     <ul>
                         <li>Wymiary dowolne</li>
                         <li>Szeroki wybór tkanin</li>
                     </ul>
                 </div>
-                <div class="photo">
-                    <img id="bannerImage" src="./img/PhotoRoom_20230530_121733.jpg" alt="Zdjęcie narożnika">
+
+                
+                <div class="wrapper">
+                    <div id="photo_rest" class="projects__images">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,7 +172,13 @@
         </footer>
     </main>
 
-    <script src="../../dist/js/script.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="./dist/js/slider.min.js"></script>
+    <script src="./dist/js/script.min.js"></script>
 </body>
 
 </html>

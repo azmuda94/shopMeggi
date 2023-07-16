@@ -49,9 +49,7 @@ async function postData(url = '', data = {}) {
 /*let location = window.location
 console.log(location);*/
 
-postData('https://shopapi-npzh.onrender.com/api/v1/typeProducts', {
-	answer: 42,
-}).then((data) => {
+postData('https://shopapi-npzh.onrender.com/api/v1/typeProducts', {}).then((data) => {
 	data.forEach(async (element) => {
 		const _id = element._id;
 		const name = element.name;
@@ -85,11 +83,9 @@ postData('https://shopapi-npzh.onrender.com/api/v1/typeProducts', {
 	return search;
 });
 
-if (window.location.pathname.includes('/projects')) {
+if (window.location.pathname.includes('/projects') || window.location.pathname.includes('/')) {
 	//console.log(window.location.pathname);
-	postData('https://shopapi-npzh.onrender.com/api/v1/files/forproject', {
-		answer: 42,
-	}).then((data) => {
+	postData('https://shopapi-npzh.onrender.com/api/v1/files/forproject', {}).then((data) => {
 		console.log(data);
 		data.forEach(async (element) => {
 			const src = element.src;
@@ -99,12 +95,55 @@ if (window.location.pathname.includes('/projects')) {
 			projectsImages.src = src;
 			projectsImages.alt = name;
 
-			console.log(projectsImages);
-			document.getElementById('projects__images').appendChild(projectsImages);
+			if (window.location.pathname.includes('/projects')){
+				document.getElementById('projects__images').appendChild(projectsImages);
+			}
+			else{				
+				projectsImages.style.width = '40%'
+				document.getElementById('projects__images__slider').appendChild(projectsImages);
+			}
 
 			// const liList = document.createElement('li');
 			// liList.classList = 'nav__desktop-item';
 		});
+		/// slider.js
+
+		$('.center').slick({
+			centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 4,
+			arrows: false,
+			autoplay:true,
+			autoplaySpeed:2000,
+			responsive: [
+				{
+					breakpoint: 1400,
+					settings: {
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 3,
+					},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 1,
+					},
+				},
+				{
+					breakpoint: 575,
+					settings: {
+						centerMode: true,
+						centerPadding: '30px',
+						slidesToShow: 1,
+						autoplay: true,
+					},
+				},
+			],
+		});
+
 	});
 }
 
@@ -116,22 +155,18 @@ if (window.location.pathname.includes('/oferta')) {
 
 	const sectionFurnitureTitle = document.createElement('h2');
 	sectionFurnitureTitle.classList = 'section-title';
-	sectionFurnitureTitle.innerHTML = url;
-
-
-	document
-		.getElementById('wrapper-furniture')
-		.appendChild(sectionFurnitureTitle);
 
 	postData(
-		'https://shopapi-npzh.onrender.com/api/v1/products/typeproduct?url=' + url,
-		{
-			answer: 42,
-		}
+		'https://shopapi-npzh.onrender.com/api/v1/products/typeproduct?url=' + url,{}
 	).then((data) => {
 
-		
-		data.forEach(async (element) => {
+		sectionFurnitureTitle.innerHTML = data.typeProduct.name;
+
+		document
+			.getElementById('wrapper-furniture')
+			.appendChild(sectionFurnitureTitle);
+
+		data.products.forEach(async (element) => {
 			const mainFile = element.mainFile;
 			const name = element.name;
 			const id = element.id;
@@ -177,39 +212,93 @@ if (window.location.pathname.includes('/oferta')) {
 		});
 	});
 }
-// .then((data) => {
-// 	const containerFurniture = document.createElement('div')
-// 	containerFurniture.classList('container-furniture')
 
-// 	const photoFurniture = document.createElement('div')
-// 	photoFurniture.classList('photo')
 
-// 	const mainPhotoFurniture = document.createElement('img')
-// 	mainPhotoFurniture.src =
+if (window.location.pathname.includes('/produkt')) {
+	let search = window.location.search;
+	const url = search.substring(5);
+	console.log(url)
 
-// 	const descriptionFurniture = document.createElement('div')
-// 	descriptionFurniture.classList('description-furniture')
+	postData(
+		'https://shopapi-npzh.onrender.com/api/v1/products/' + url,{}
+	).then((data) => {
 
-// 	const h2Furniture = document.createElement('h2')
-// 	h2Furniture.classList('furniture-title')
-// 	h2Furniture.innerHTML =
+		const files=data.files;
+		
+		const srcProduct = data.product.mainFile.src;
+		const nameProduct = data.product.name;
 
-// 	const ulListFurniture = document.createElement('ul')
 
-// 	const liItemFurniture = document.createElement('li')
+		document.querySelector('.furniture-title').innerText=nameProduct;
 
-// 	document.getElementById('wrapper-furniture').appendChild(containerFurniture);
-// 	containerFurniture.appendChild(photoFurniture);
-// 	photoFurniture.appendChild(mainPhotoFurniture)
+		const projectsImagesMain = document.createElement('img');
+		projectsImagesMain.src = srcProduct;
+		projectsImagesMain.alt = nameProduct;
 
-// })
-// 	.then((data) => {
-// 		postData('https://shopapi-npzh.onrender.com/api/v1/products', {
-// 			answer: 42,
-// 		}).then((data) => {
-// 			console.log(data);
-// 		});
-// 	});
+		// style
+
+		projectsImagesMain.style.width = '60%'		
+		projectsImagesMain.style.display = 'block'	
+		projectsImagesMain.style.marginLeft = 'auto'	
+		projectsImagesMain.style.marginRight = 'auto'	
+
+		document.getElementById('photo').appendChild(projectsImagesMain);
+		
+		files.forEach(async (element) => {
+			const src = element.src;
+			const name = element.name;
+
+			const projectsImages = document.createElement('img');
+			projectsImages.src = src;
+			projectsImages.alt = name;
+
+			projectsImages.style.width = '20%'
+			projectsImages.style.margin = '1vw'
+
+			document.getElementById('photo_rest').appendChild(projectsImages);
+
+		});
+		/// slider.js
+
+		$('#photo_rest').slick({
+			centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 3,
+			arrows: false,
+			autoplay:true,
+			autoplaySpeed:2000,
+			responsive: [
+				{
+					breakpoint: 1400,
+					settings: {
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 3,
+					},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 1,
+					},
+				},
+				{
+					breakpoint: 575,
+					settings: {
+						centerMode: true,
+						centerPadding: '30px',
+						slidesToShow: 1,
+						autoplay: true,
+					},
+				},
+			],
+		});
+		
+	});
+}
+
 
 // FOOTER
 const handleCurrentYear = () => {
