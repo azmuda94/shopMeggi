@@ -173,6 +173,9 @@ h4.contact-list-title {
 	#page {
 		.container-furniture {
 			display: flex;
+			flex-direction: column;
+			justify-items: center;
+			align-items: center;
 			.photo {
 				width: 100%;
 			}
@@ -327,6 +330,8 @@ h4.contact-list-title {
 		.container-furniture {
 			display: flex;
 			flex-direction: column;
+			justify-items: center;
+			align-items: center;
 
 			.photo {
 				display: flex;
