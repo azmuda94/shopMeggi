@@ -49,7 +49,7 @@ h4.contact-list-title {
 .header {
 	position: relative;
 	height: 10vh;
-	width: 100vw;
+	
 
 	&__top {
 		position: relative;
@@ -158,6 +158,7 @@ h4.contact-list-title {
 		display: flex;
 		justify-content: center;
 		padding: 2em;
+		
 
 		a {
 			text-decoration: none;
@@ -274,6 +275,7 @@ h4.contact-list-title {
 
 @media (min-width: 475px) {
 	#page {
+		overflow: hidden;
 		.furnitures {			
 			.furnitures__item {				
 				.furniture__item-photo {
@@ -286,6 +288,7 @@ h4.contact-list-title {
 
 @media (min-width: 992px) {
 	#page {
+		overflow: hidden;
 		.furnitures {
 			.furnitures__item {
 				flex-direction: row;

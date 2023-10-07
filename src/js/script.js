@@ -98,7 +98,7 @@ if (window.location.pathname.includes('/projects') || window.location.pathname.i
 			if (window.location.pathname.includes('/projects')){
 				document.getElementById('projects__images').appendChild(projectsImages);
 			}
-			else{				
+			else if (!window.location.pathname.includes('/oferta') && !window.location.pathname.includes('/contact')){				
 				projectsImages.style.width = '40%'
 				document.getElementById('projects__images__slider').appendChild(projectsImages);
 			}
