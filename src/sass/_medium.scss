@@ -1,8 +1,9 @@
-@media (min-width: 768px) {
+@media (max-width: 992px) {
 	h1.header-title {
 		left: 45px;
 		width: 280px;
 		font-size: 2.9rem;
+		display:none;
 	}
 
 	h2.section-title {
@@ -76,12 +77,26 @@
 		.benefits {
 			&__squares {
 				.square {
-					margin: 1em 0;
-					width: 170px;
-					height: 170px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					margin: 1em 2em;
+					padding: 1em;
+					width: 200px;
+					height: 200px;
+					border: 1px solid $title;
 
 					p {
-						font-size: 1.7rem;
+						margin-top: 1em;
+						font-size: 2.2rem;
+						text-align: center;
+					}
+
+					i {
+						font-size: 5rem;
+						text-align: center;
+						color: $title;
 					}
 				}
 			}

@@ -1,56 +1,129 @@
-@media (min-width: 576px) {
+@media (max-width: 576px) {
 	h1.header-title {
-		left: 15px;
-		width: 270px;
-		font-size: 3rem;
+		left: 45px;
+		
+		
+		font-size: 2.9rem;
+		display:none;
 	}
 
 	h2.section-title {
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 	}
 
 	h3.contact-title {
-		font-size: 2.4rem;
+		font-size: 2.6rem;
+	}
+	.section {
+		margin: 4em 0;
 	}
 
-	#page {
-		.header {
-			&__img {
-				background-position: 77%;
+	.header {
+		position: relative;
+		height: 10vh;
+
+		&__top {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			height: 100%;
+			width: 100%;
+			padding: 0 1em;
+			z-index: 100;
+
+			&-logo {
+				position: relative;
+				width: 50vw;
+				padding: 0 1em;
+				z-index: 2;
+
+				img {
+					height: 100%;
+				}
+			}
+
+			&-hamburger {
+				display: flex;
+				align-items: center;
+				padding: 0 2em;
+				cursor: pointer;
+
+				// IMPORT HAMBURGER
 			}
 		}
+		.nav {
+			&__mobile {
+				font-size: 1.9rem;
+			}
 
+			&__sub {
+				&-item {
+					font-size: 1.6rem;
+				}
+			}
+
+			&__desktop {
+				display: none;
+			}
+		}
+	}
+	#page {
 		.about {
 			&__text {
-				line-height: 1.8em;
-			}
-		}
-
-		.projects {
-			position: relative;
-
-			&__images {
-				img {
-					width: 90%;
-					margin: 0 1em;
-				}
+				font-size: 1.8rem;
+				line-height: 2em;
 			}
 		}
 
 		.benefits {
-			.square {
-				margin: 1.5em 1.5em;
-				width: 170px;
-				height: 170px;
-				i {
-					font-size: 5rem;
-					text-align: center;
-					color: $title;
-				}
+			&__squares {
+				.square {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					margin: 1em 2em;
+					padding: 1em;
+					width: 200px;
+					height: 200px;
+					border: 1px solid $title;
 
-				p {
-					margin-top: 1em;
-					font-size: 1.6rem;
+					p {
+						margin-top: 1em;
+						font-size: 2.2rem;
+						text-align: center;
+					}
+
+					i {
+						font-size: 5rem;
+						text-align: center;
+						color: $title;
+					}
+				}
+			}
+		}
+
+		.contact {
+			&__list {
+				margin-left: 2.5em;
+				font-size: 1.8rem;
+
+				&-item {
+					margin-bottom: 0.7em;
+				}
+			}
+
+			&__info {
+				font-size: 1.6rem;
+			}
+
+			.footer {
+				margin-top: 1em;
+				padding: 0.6em;
+				font-size: 1.4rem;
+				background-color: #d6d5d5;
+
+				&__text {
 					text-align: center;
 				}
 			}
